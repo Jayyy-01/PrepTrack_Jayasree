@@ -67,7 +67,6 @@ while True:
     else:
         print("Please enter either yes or no")
 
-# completed
 
 # TODO: Convert profile_input into True or False.
 if profile_input == "yes":
@@ -120,23 +119,64 @@ for day in range(1, 8):
             print("Invalid input. Please enter -1 or a score between 0 and 100.")
 
     # TODO: Handle absence.
+    if score == -1:
+        absent_days+=1
+        print(f"Day: {day} Result: Absent")
+        continue
     # Increase absent_days and use continue.
+    if score >=75 and score <= 100:
+        strong_days+=1
+        print(f"Day {day} Result: Strong")
+    elif score >=60 and score <= 74 :
+        satisfactory_days+=1
+        print(f"Day {day} Result: Satisfactory")
+    elif score >=40 and score <= 59:
+        improvement_days+=1
+        print(f"Day {day} Result: Needs Improvement")
+    elif score >= 0 and score <= 39:
+        critical_days+=1
+        print(f"Day {day} Result: Critical")
+    else:
+        print(f"Day {day} Result: Needs Improvment")
+    
+
 
     # TODO: Increase attempted_days and total_score.
+    attempted_days+=1
+    total_score+=score
+
 
     # TODO: Initialize or update:
     # highest_score, highest_score_day,
     # lowest_score and lowest_score_day.
+    if not first_attempt_found:
+        first_attempt_found =True
+        highest_score = score
+        highest_score_day = day
+        lowest_score = score
+        lowest_score_day = day
+    elif score > highest_score:
+        highest_score = score
+        highest_score_day = day
+    if score < lowest_score:
+        lowest_score = score
+        lowest_score_day = day
 
     # TODO: Classify the score:
     # 75–100  -> Strong
     # 60–74   -> Satisfactory
     # 40–59   -> Needs Improvement
     # 0–39    -> Critical
+    if score >=40 and score <= 100:
+        passed_days+=1
+    else:
+        failed_days+=1
 
     # TODO: Count passed and failed days.
+    
 
     # TODO: Store only the first critical day and score.
+   
 
 
 # --------------------------------------------------
