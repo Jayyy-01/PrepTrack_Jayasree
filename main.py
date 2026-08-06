@@ -138,7 +138,7 @@ for day in range(1, 8):
         highest_score_day = day
 
         lowest_score = score
-        lowest_score_day = day
+        # lowest_score_day = day
 
         first_attempt_found = True
 
