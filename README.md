@@ -374,7 +374,7 @@ It motivates future improvements and helps others discover the project.
 
 ###  Thank you for visiting this repository!
 
-**Happy Coding! **
+**Happy Coding!**
 
 </div>
 ````
