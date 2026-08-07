@@ -347,7 +347,7 @@ How I solved it:
 
 | Reviewed Member | Repository Link | What Was Done Well | Issue Identified | Suggested Improvement |
 |-----------------|------------------------------------------------------|------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
-| Deepa BhavyaSri | https://github.com/example-user/preptrack-bhavya | The highest and lowest score tracking correctly identifies both the score and the day it occurred on. | Critical score detection stops processing after the first critical day, instead of continuing through all seven days once the first critical score is stored. | Continue processing all seven days even after finding the first critical score, and only store the first occurrence without breaking out of the loop. |
+| Deepa BhavyaSri | [https://github.com/example-user/preptrack-bhavya](https://github.com/Deepbhavyasrisonti/prepTrack-Deepa) | The highest and lowest score tracking correctly identifies both the score and the day it occurred on. | Critical score detection stops processing after the first critical day, instead of continuing through all seven days once the first critical score is stored. | Continue processing all seven days even after finding the first critical score, and only store the first occurrence without breaking out of the loop. |
 
 ---
 
