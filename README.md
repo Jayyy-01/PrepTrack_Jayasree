@@ -163,6 +163,8 @@ Final Status           : Ready for Mock Interview
 Primary Blocker        : None
 Next Action            : Proceed to placement mock interviews
 ```
+Test-Result Table (demo – fully filled)
+
 | Test ID | Scenario                     | Expected Result                 | Actual Result                      | Status |
 |--------|------------------------------|---------------------------------|------------------------------------|--------|
 | Run-01 | High scores, low attendance  | Attendance Improvement Required | Attendance Improvement Required    | Pass   |
