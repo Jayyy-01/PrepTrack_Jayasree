@@ -330,7 +330,7 @@ How I solved it:
 - For the highest/lowest bug, I stepped through the loop logic line by line and realized first_attempt_found was declared but never reassigned anywhere, so the "not first_attempt_found" branch always ran. Adding first_attempt_found = True inside that branch fixed it — verified by re-running the same test scores and confirming Highest Score and Lowest Score now showed the correct day and value instead of defaulting.
 
 
-Code Review Completed
+#  Feedback Received
 | Reviewed Member | Repository Link | What Was Done Well | Issue Identified | Suggested Improvement |
 |-----------------|------------------------------------------------------|------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
 | Deepa BhavyaSri | https://github.com/example-user/preptrack-bhavya | The highest and lowest score tracking correctly identifies both the score and the day it occurred on, and the first critical day and score are captured accurately without stopping the loop early. | Critical score detection stops processing after the first critical day. | Continue processing all seven days even after finding the first critical score, and only store the first occurrence without breaking out of the loop. |
