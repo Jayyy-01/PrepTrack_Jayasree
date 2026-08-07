@@ -141,48 +141,64 @@ The application validates every user input.
 ==================================================
               PREPTRACK REPORT
 ==================================================
-
 Student Name           : Jayasree
-Registration Number    : 21MT1A0456
+Registration Number    : 22HR1A0483
 Graduation Year        : 2026
-Attendance             : 87%
+Attendance             : 89.0%
 
-Attempted Days         : 7
-Absent Days            : 0
-Passed Days            : 6
-Failed Days            : 1
+Attempted Days         : 6
+Absent Days            : 1
+Passed Days            : 2
+Failed Days            : 4
 
-Strong Days            : 4
-Satisfactory Days      : 2
+Strong Days            : 2
+Satisfactory Days      : 0
 Needs Improvement Days : 1
-Critical Days          : 0
+Critical Days          : 3
 
-Average Score          : 81.43
+Total Score            : 313
+Average Score          : 52.17
+Highest Score          : 99
+Highest Score Day      : 4
+Lowest Score           : 22
+Lowest Score Day       : 6
 
-Final Status           : Ready for Mock Interview
-Primary Blocker        : None
-Next Action            : Proceed to placement mock interviews
+CRITICAL SCORE INFORMATION
+Critical Score Found     : True
+First Critical Day     : Day 1
+First Critical Score   : 23
+
+FINAL DECISION
+Final Status           : Critical Support Required
+Primary Blocker        : Critical score found
+Next Action            : Revise the concepts from the first critical day
+==================================================
 ```
-#  Test-Result Table (demo – fully filled)
+
+#  Test-Result Table
+
+> Verified run (scores 90, 89, 60, 34, absent, 77, 20 — attendance 99, graduation year 2025, project completed, profile verified):
+> Attempted Days: 6, Strong: 3, Satisfactory: 1, Critical: 2, Highest Score: 90 (Day 1), Lowest Score: 20 (Day 7), Final Status: **Critical Support Required** — matches expected output.
 
 
-| Test ID | Scenario                     | Expected Result                 | Actual Result                      | Status |
-|--------|------------------------------|---------------------------------|------------------------------------|--------|
-| Run-01 | High scores, low attendance  | Attendance Improvement Required | Attendance Improvement Required    | Pass   |
-| TC-01  | All requirements satisfied   | Ready for Mock Interview        | Ready for Mock Interview           | Pass   |
-| TC-02  | Critical score present       | Critical Support Required       | Critical Support Required          | Pass   |
-| TC-03  | Fewer than six attempts      | Practice Incomplete             | Practice Incomplete                | Pass   |
-| TC-04  | Fewer than four passes       | Insufficient Passed Practices   | Insufficient Passed Practices      | Pass   |
-| TC-05  | Average below 70             | Practice Improvement Required   | Practice Improvement Required      | Pass   |
-| TC-06  | Attendance below 75          | Attendance Improvement Required | Attendance Improvement Required    | Pass   |
-| TC-07  | Graduation year not eligible | Graduation Criteria Not Met     | Graduation Criteria Not Met        | Pass   |
-| TC-08  | Project incomplete           | Application On Hold             | Application On Hold                | Pass   |
-| TC-09  | Profile not verified         | Application On Hold             | Application On Hold                | Pass   |
-| TC-10  | All days absent              | Practice Not Evaluated          | Practice Not Evaluated             | Pass   |
-| TC-11  | Invalid low score            | Input rejected                  | Input rejected                     | Pass   |
-| TC-12  | Invalid high score           | Input rejected                  | Input rejected                     | Pass   |
-| TC-13  | Boundary scores              | Correct classifications         | Correct classifications            | Pass   |
-| TC-14  | Multiple blockers            | First blocker displayed         | First blocker displayed            | Pass   |
+
+| Test ID | Scenario                     | Expected Result                 | Actual Result | Status |
+|--------|------------------------------|---------------------------------|----------------|--------|
+| Run-01 | Mixed scores with one critical day, one absent day | Critical Support Required | Critical Support Required | Pass |
+| TC-01  | All requirements satisfied   | Ready for Mock Interview        | *(fill in after running)* | |
+| TC-02  | Critical score present       | Critical Support Required       | *(fill in after running)* | |
+| TC-03  | Fewer than six attempts      | Practice Incomplete             | *(fill in after running)* | |
+| TC-04  | Fewer than four passes       | Insufficient Passed Practices   | *(fill in after running)* | |
+| TC-05  | Average below 70             | Practice Improvement Required   | *(fill in after running)* | |
+| TC-06  | Attendance below 75          | Attendance Improvement Required | *(fill in after running)* | |
+| TC-07  | Graduation year not eligible | Graduation Criteria Not Met     | *(fill in after running)* | |
+| TC-08  | Project incomplete           | Application On Hold             | *(fill in after running)* | |
+| TC-09  | Profile not verified         | Application On Hold             | *(fill in after running)* | |
+| TC-10  | All days absent              | Practice Not Evaluated          | *(fill in after running)* | |
+| TC-11  | Invalid low score            | Input rejected                  | *(fill in after running)* | |
+| TC-12  | Invalid high score           | Input rejected                  | *(fill in after running)* | |
+| TC-13  | Boundary scores               | Correct classifications         | *(fill in after running)* | |
+| TC-14  | Multiple blockers            | First blocker displayed         | *(fill in after running)* | |
 
 ---
 
@@ -234,12 +250,11 @@ End
 #  Project Structure
 
 ```text
-PrepTrack/
+preptrack-jayasree/
 │
-├── preptrack.py
+├── main.py
 ├── README.md
 └── LICENSE
-```
 
 ---
 
@@ -302,8 +317,7 @@ Some possible enhancements include:
 
 Name: Jayasree P
 
-Repository URL: [https://github.com/Jayyy-01/preptrack-jayasree](https://github.com/Jayyy-01/PrepTrack_Jayasree)
-
+Repository URL: https://github.com/Jayyy-01/preptrack-jayasree
 
 My main contribution:
 - Built and debugged the complete PrepTrack console application, including tracing two logic errors that surfaced only through manual test runs rather than at write time, and correcting them against the exact requirement tables in the problem statement.
@@ -319,7 +333,6 @@ Features I implemented:
 - Average calculation with a zero-attempted-days guard to prevent a crash when every day is marked absent.
 - The full ten-condition priority chain for determining Final Status, Primary Blocker, and Next Action, checked against the Part 24 requirement table.
 
-
 Most difficult logic:
 - Getting the highest/lowest score tracking right. My first version reset highest_score and lowest_score on every iteration instead of only the first one, because I never actually set first_attempt_found to True inside the block that checked it — so the program silently treated every day as "the first attempt" and the report kept showing "Not Available" even when six days had valid scores.
 
@@ -330,13 +343,18 @@ How I solved it:
 - I traced the classification bug by manually re-running a fixed set of scores and counting by hand what each day should classify as, then compared it against the printed output — that's how I noticed the counters were being incremented in two separate places in my code, once in a printing block right after the absence check and again later in a second classification block. I removed the duplicate and kept a single classification pass that both counts and prints.
 - For the highest/lowest bug, I stepped through the loop logic line by line and realized first_attempt_found was declared but never reassigned anywhere, so the "not first_attempt_found" branch always ran. Adding first_attempt_found = True inside that branch fixed it — verified by re-running the same test scores and confirming Highest Score and Lowest Score now showed the correct day and value instead of defaulting.
 
+---
 
-#  Feedback Received
+#  Code Review Completed
+
 | Reviewed Member | Repository Link | What Was Done Well | Issue Identified | Suggested Improvement |
 |-----------------|------------------------------------------------------|------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
-| Deepa BhavyaSri | https://github.com/example-user/preptrack-bhavya | The highest and lowest score tracking correctly identifies both the score and the day it occurred on, and the first critical day and score are captured accurately without stopping the loop early. | Critical score detection stops processing after the first critical day. | Continue processing all seven days even after finding the first critical score, and only store the first occurrence without breaking out of the loop. |
+| Deepa BhavyaSri | https://github.com/example-user/preptrack-bhavya | The highest and lowest score tracking correctly identifies both the score and the day it occurred on. | Critical score detection stops processing after the first critical day, instead of continuing through all seven days once the first critical score is stored. | Continue processing all seven days even after finding the first critical score, and only store the first occurrence without breaking out of the loop. |
 
-Feedback Received
+---
+
+#  Feedback Received
+
 Reviewed By: Deepa BhavyaSri
 
 Feedback Received:
