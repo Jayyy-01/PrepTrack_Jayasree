@@ -263,7 +263,7 @@ preptrack-jayasree/
 ## Clone the repository
 
 ```bash
-git clone https://github.com/Jayyy-01/preptrack-jayasree.git
+git clone [https://github.com/Jayyy-01/preptrack-jayasree.git](https://github.com/Jayyy-01/PrepTrack_Jayasree.git)
 ```
 
 ## Navigate to the project
