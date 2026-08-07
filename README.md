@@ -247,20 +247,15 @@ python preptrack.py
 
 # 💡 Concepts Demonstrated
 
-This project showcases:
-
-- Python Programming
-- Variables & Data Types
-- Conditional Statements
-- Loops
-- Boolean Logic
-- Nested Conditions
-- Input Validation
-- Counters
-- Data Analysis
-- Console Applications
-- Decision Making
-- Report Generation
+Python concepts I used:
+- Input handling with `input()`, `int()`, and `float()`.
+- Conditional statements (`if`, `elif`, `else`) and boolean expressions.
+- `while` loops for validating student name, attendance, and yes/no inputs.
+- `for` loops with `range()` for repeating logic over seven practice days.
+- `break` for exiting validation loops after valid input.
+- `continue` for skipping logic on absent practice days.
+- Counters and accumulator variables for tracking days and scores.
+- Defensive programming patterns such as preventing division by zero and initializing highest/lowest scores without lists.
 
 ---
 
