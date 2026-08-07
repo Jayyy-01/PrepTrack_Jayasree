@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 PrepTrack
+#  PrepTrack
 ### Student Placement Readiness Assessment System
 
 *A Python console application that evaluates a student's placement readiness using performance analytics, eligibility validation, and automated decision-making.*
@@ -25,9 +25,9 @@ The project demonstrates strong understanding of Python fundamentals, problem-so
 
 ---
 
-# ✨ Key Features
+#  Key Features
 
-### 👤 Student Profile Management
+###  Student Profile Management
 
 - Validates student name
 - Validates registration number
@@ -38,7 +38,7 @@ The project demonstrates strong understanding of Python fundamentals, problem-so
 
 ---
 
-### 📊 Practice Performance Evaluation
+###  Practice Performance Evaluation
 
 The application analyzes **7 coding practice sessions**.
 
@@ -52,14 +52,14 @@ For every day it:
 
 ---
 
-### 🎯 Intelligent Performance Classification
+### Intelligent Performance Classification
 
 | Score | Category |
 |--------|----------|
-| **75 – 100** | ⭐ Strong |
-| **60 – 74** | ✅ Satisfactory |
-| **40 – 59** | ⚠ Needs Improvement |
-| **0 – 39** | ❌ Critical |
+| **75 – 100** |  Strong |
+| **60 – 74** |  Satisfactory |
+| **40 – 59** |  Needs Improvement |
+| **0 – 39** |  Critical |
 | **-1** | Absent |
 
 ---
@@ -68,24 +68,24 @@ For every day it:
 
 PrepTrack automatically generates:
 
-- ✅ Total Score
-- ✅ Average Score
-- ✅ Attempted Days
-- ✅ Absent Days
-- ✅ Passed Days
-- ✅ Failed Days
-- ✅ Strong Days
-- ✅ Satisfactory Days
-- ✅ Needs Improvement Days
-- ✅ Critical Days
-- ✅ Highest Score
-- ✅ Lowest Score
-- ✅ First Critical Day
-- ✅ First Critical Score
+-  Total Score
+-  Average Score
+-  Attempted Days
+-  Absent Days
+-  Passed Days
+-  Failed Days
+-  Strong Days
+-  Satisfactory Days
+-  Needs Improvement Days
+-  Critical Days
+-  Highest Score
+-  Lowest Score
+-  First Critical Day
+-  First Critical Score
 
 ---
 
-# ✅ Placement Eligibility Rules
+#  Placement Eligibility Rules
 
 A student is considered **Placement Ready** only when **all** of the following conditions are satisfied.
 
@@ -102,7 +102,7 @@ A student is considered **Placement Ready** only when **all** of the following c
 
 ---
 
-# 🧠 Decision Engine
+#  Decision Engine
 
 PrepTrack evaluates the student's readiness using the following priority:
 
@@ -119,7 +119,7 @@ PrepTrack evaluates the student's readiness using the following priority:
 
 ---
 
-# 🔒 Input Validation
+#  Input Validation
 
 The application validates every user input.
 
@@ -135,7 +135,7 @@ The application validates every user input.
 
 ---
 
-# 📋 Sample Report
+#  Sample Report
 
 ```text
 ==================================================
@@ -163,6 +163,23 @@ Final Status           : Ready for Mock Interview
 Primary Blocker        : None
 Next Action            : Proceed to placement mock interviews
 ```
+| Test ID | Scenario                     | Expected Result                 | Actual Result                      | Status |
+|--------|------------------------------|---------------------------------|------------------------------------|--------|
+| Run-01 | High scores, low attendance  | Attendance Improvement Required | Attendance Improvement Required    | Pass   |
+| TC-01  | All requirements satisfied   | Ready for Mock Interview        | Ready for Mock Interview           | Pass   |
+| TC-02  | Critical score present       | Critical Support Required       | Critical Support Required          | Pass   |
+| TC-03  | Fewer than six attempts      | Practice Incomplete             | Practice Incomplete                | Pass   |
+| TC-04  | Fewer than four passes       | Insufficient Passed Practices   | Insufficient Passed Practices      | Pass   |
+| TC-05  | Average below 70             | Practice Improvement Required   | Practice Improvement Required      | Pass   |
+| TC-06  | Attendance below 75          | Attendance Improvement Required | Attendance Improvement Required    | Pass   |
+| TC-07  | Graduation year not eligible | Graduation Criteria Not Met     | Graduation Criteria Not Met        | Pass   |
+| TC-08  | Project incomplete           | Application On Hold             | Application On Hold                | Pass   |
+| TC-09  | Profile not verified         | Application On Hold             | Application On Hold                | Pass   |
+| TC-10  | All days absent              | Practice Not Evaluated          | Practice Not Evaluated             | Pass   |
+| TC-11  | Invalid low score            | Input rejected                  | Input rejected                     | Pass   |
+| TC-12  | Invalid high score           | Input rejected                  | Input rejected                     | Pass   |
+| TC-13  | Boundary scores              | Correct classifications         | Correct classifications            | Pass   |
+| TC-14  | Multiple blockers            | First blocker displayed         | First blocker displayed            | Pass   |
 
 ---
 
@@ -211,7 +228,7 @@ End
 
 ---
 
-# 📂 Project Structure
+#  Project Structure
 
 ```text
 PrepTrack/
@@ -223,7 +240,7 @@ PrepTrack/
 
 ---
 
-# ▶️ Getting Started
+#  Getting Started
 
 ## Clone the repository
 
@@ -245,7 +262,7 @@ python preptrack.py
 
 ---
 
-# 💡 Concepts Demonstrated
+#  Concepts Demonstrated
 
 Python concepts I used:
 - Input handling with `input()`, `int()`, and `float()`.
@@ -259,7 +276,7 @@ Python concepts I used:
 
 ---
 
-# 🚀 Future Improvements
+#  Future Improvements
 
 Some possible enhancements include:
 
@@ -276,38 +293,44 @@ Some possible enhancements include:
 
 ---
 
-# 📸 Screenshots
-
-> Add screenshots of your application here after uploading them to GitHub.
-
-```
-assets/
-├── home.png
-├── input.png
-├── report.png
-```
-
 ---
 
-# 🤝 Contributing
+Individual Contribution
+Name: Jayasree P
 
-Contributions, suggestions, and improvements are welcome.
+Repository URL: https://github.com/Jayyy-01/preptrack-jayasree
+(replace with your actual repo link once created)
 
-1. Fork the repository
-2. Create a new branch
-3. Commit your changes
-4. Push the branch
-5. Open a Pull Request
+My main contribution:
+- Built and debugged the complete PrepTrack console application, including tracing two logic errors that surfaced only through manual test runs rather than at write time, and correcting them against the exact requirement tables in the problem statement.
+
+Features I implemented:
+- Full student-profile collection and validation, including a while-loop check for a non-empty name and a bounded while-loop check for attendance between 0 and 100.
+- Yes/no input validation with retry prompts for both project-completion and profile-verification status, converted into Booleans.
+- Seven-day score processing using one for loop with range(1, 8), with an inner while loop that accepts only -1 or a value from 0 to 100.
+- Absent-day handling using continue so absent days are excluded from totals, attempted-day counts, and highest/lowest comparisons.
+- Score classification into Strong, Satisfactory, Needs Improvement, and Critical, along with passed/failed counting based on the 60-point threshold.
+- Highest and lowest score tracking, including the day each occurred, built without lists or max()/min().
+- First-critical-score detection that stores only the first occurrence while still processing all seven days.
+- Average calculation with a zero-attempted-days guard to prevent a crash when every day is marked absent.
+- The full ten-condition priority chain for determining Final Status, Primary Blocker, and Next Action, checked against the Part 24 requirement table.
+
+
+Most difficult logic:
+- Getting the highest/lowest score tracking right. My first version reset highest_score and lowest_score on every iteration instead of only the first one, because I never actually set first_attempt_found to True inside the block that checked it — so the program silently treated every day as "the first attempt" and the report kept showing "Not Available" even when six days had valid scores.
+
+Problem I faced:
+- During testing, my classification counts (Strong + Satisfactory + Needs Improvement + Critical) added up to more than the actual attempted_days — for one run they totalled 12 against only 6 attempted days. At the same time, Highest Score and Lowest Score were showing "Not Available" even though real scores had been entered.
+
+How I solved it:
+- I traced the classification bug by manually re-running a fixed set of scores and counting by hand what each day should classify as, then compared it against the printed output — that's how I noticed the counters were being incremented in two separate places in my code, once in a printing block right after the absence check and again later in a second classification block. I removed the duplicate and kept a single classification pass that both counts and prints.
+- For the highest/lowest bug, I stepped through the loop logic line by line and realized first_attempt_found was declared but never reassigned anywhere, so the "not first_attempt_found" branch always ran. Adding first_attempt_found = True inside that branch fixed it — verified by re-running the same test scores and confirming Highest Score and Lowest Score now showed the correct day and value instead of defaulting.
 
 ---
 
 # 👩‍💻 Author
 
 **Jayasree P**
-
-**Electronics and Communication Engineering Student**
-
-Passionate about Python, Backend Development, AI, and Problem Solving.
 
 **GitHub:** https://github.com/Jayyy-01
 
