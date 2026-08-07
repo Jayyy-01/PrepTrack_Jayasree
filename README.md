@@ -302,7 +302,7 @@ Some possible enhancements include:
 
 Name: Jayasree P
 
-Repository URL: https://github.com/Jayyy-01/preptrack-jayasree
+Repository URL: [https://github.com/Jayyy-01/preptrack-jayasree](https://github.com/Jayyy-01/PrepTrack_Jayasree)
 
 
 My main contribution:
