@@ -315,7 +315,7 @@ Some possible enhancements include:
 
 Name: Jayasree P
 
-Repository URL: https://github.com/Jayyy-01/preptrack-jayasree
+Repository URL: [https://github.com/Jayyy-01/preptrack-jayasree](https://github.com/Jayyy-01/PrepTrack_Jayasree)
 
 My main contribution:
 - Built and debugged the complete PrepTrack console application, including tracing two logic errors that surfaced only through manual test runs rather than at write time, and correcting them against the exact requirement tables in the problem statement.
