@@ -15,7 +15,7 @@
 
 ---
 
-# 📖 About the Project
+#  About the Project
 
 **PrepTrack** is a Python-based console application developed to assess whether a student is ready for campus placements based on multiple academic and performance parameters.
 
@@ -64,7 +64,7 @@ For every day it:
 
 ---
 
-# 📈 Analytics Generated
+#  Analytics Generated
 
 PrepTrack automatically generates:
 
@@ -183,7 +183,7 @@ Next Action            : Proceed to placement mock interviews
 
 ---
 
-# 🔄 Application Workflow
+#  Application Workflow
 
 ```text
 Start
@@ -215,7 +215,7 @@ End
 
 ---
 
-# 🛠 Technologies Used
+#  Technologies Used
 
 - Python 3
 - Console Application
@@ -326,9 +326,31 @@ How I solved it:
 - I traced the classification bug by manually re-running a fixed set of scores and counting by hand what each day should classify as, then compared it against the printed output — that's how I noticed the counters were being incremented in two separate places in my code, once in a printing block right after the absence check and again later in a second classification block. I removed the duplicate and kept a single classification pass that both counts and prints.
 - For the highest/lowest bug, I stepped through the loop logic line by line and realized first_attempt_found was declared but never reassigned anywhere, so the "not first_attempt_found" branch always ran. Adding first_attempt_found = True inside that branch fixed it — verified by re-running the same test scores and confirming Highest Score and Lowest Score now showed the correct day and value instead of defaulting.
 
+
+Code Review Completed
+| Reviewed Member | Repository Link | What Was Done Well | Issue Identified | Suggested Improvement |
+|-----------------|------------------------------------------------------|------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+| Deepa BhavyaSri | https://github.com/example-user/preptrack-bhavya | The highest and lowest score tracking correctly identifies both the score and the day it occurred on, and the first critical day and score are captured accurately without stopping the loop early. | Critical score detection stops processing after the first critical day. | Continue processing all seven days even after finding the first critical score, and only store the first occurrence without breaking out of the loop. |
+
+Feedback Received
+Reviewed By: Deepa BhavyaSri
+
+Feedback Received:
+- The program correctly excludes absent days from the average score calculation.
+- The final status priority is mostly correct, but the attendance condition should be checked before average score in some scenarios.
+
+Was the Feedback Valid? Yes
+
+Change Made:
+- Rechecked the final status order against the project requirement and confirmed that the current order matches the given priority.
+- Added comments and tested more scenarios to ensure the priority order works as expected.
+
+Commit Message Used:
+- "Review final status priority and validate attendance condition order"
+
 ---
 
-# 👩‍💻 Author
+#  Author
 
 **Jayasree P**
 
@@ -336,9 +358,9 @@ How I solved it:
 
 ---
 
-# ⭐ Support
+#  Support
 
-If you found this project useful, please consider giving it a ⭐ on GitHub.
+If you found this project useful, please consider giving it a star on GitHub.
 
 It motivates future improvements and helps others discover the project.
 
@@ -346,9 +368,9 @@ It motivates future improvements and helps others discover the project.
 
 <div align="center">
 
-### 🚀 Thank you for visiting this repository!
+###  Thank you for visiting this repository!
 
-**Happy Coding! 💙**
+**Happy Coding! **
 
 </div>
 ````
