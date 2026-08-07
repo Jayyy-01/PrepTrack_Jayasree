@@ -356,7 +356,7 @@ Commit Message Used:
 
 #  Author
 
-**Jayasree P**
+**Name:** **Jayasree P**
 
 **GitHub:** https://github.com/Jayyy-01
 
@@ -377,4 +377,4 @@ It motivates future improvements and helps others discover the project.
 **Happy Coding!**
 
 </div>
-````
+
