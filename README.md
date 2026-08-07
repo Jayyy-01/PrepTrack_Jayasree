@@ -255,7 +255,7 @@ preptrack-jayasree/
 ├── main.py
 ├── README.md
 └── LICENSE
-
+```
 ---
 
 #  Getting Started
@@ -263,7 +263,7 @@ preptrack-jayasree/
 ## Clone the repository
 
 ```bash
-git clone https://github.com/Jayyy-01/PrepTrack.git
+git clone https://github.com/Jayyy-01/preptrack-jayasree.git
 ```
 
 ## Navigate to the project
